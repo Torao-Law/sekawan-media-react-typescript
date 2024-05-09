@@ -11,3 +11,15 @@ export type TTickets = {
   priority: string
   customer: TUser
 }
+
+export type TCreateTicket = {
+  customer: string
+  description: string
+  date: string
+  priority: string
+}
+
+export type TTicketShort= {
+  type?: string
+  isUptoDown: boolean
+}

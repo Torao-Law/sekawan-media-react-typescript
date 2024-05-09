@@ -4,14 +4,17 @@ import App from "./App.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import "./i18n";
-import AuthProvider from "./store/userContext.tsx";
+import RootProvider from "./store/rootProvider.tsx";
+import ReactModal from "react-modal";
+
+ReactModal.setAppElement('#root');
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <AuthProvider>
+    <RootProvider>
       <Router>
         <App />
       </Router>
-    </AuthProvider>
+    </RootProvider>
   </React.StrictMode>
 );
