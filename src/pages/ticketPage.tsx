@@ -18,16 +18,16 @@ const TicketPage = (): React.JSX.Element => {
         <Headers path={"Tickets"} />
       </div>
 
-      <div className="w-full rounded bg-white mt-8 mb-12 border border-gray-300">
+      <div className="w-full rounded bg-white mt-8 mb-12 border border-gray-300 dark:bg-gray-950 dark:border-orange-300">
         <div className="flex justify-between p-6">
-          <p className="font-semibold text-gray-600">
+          <p className="font-semibold text-gray-600 dark:text-orange-600">
             All Tickets{" "}
             <span className="cursor-pointer" onClick={isOpenModalCreate}>
               +
             </span>
           </p>
           <div className="flex items-center">
-            <div className="text-sm cursor-pointer text-gray-400 ">
+            <div className="text-sm cursor-pointer text-gray-400 dark:text-orange-400">
               <label onClick={() => setIsUptoDown(!isUptoDown)}>
                 <i
                   className={`fa-solid fa-arrow-${
@@ -36,7 +36,7 @@ const TicketPage = (): React.JSX.Element => {
                 ></i>
               </label>
 
-              <select id="sort" onChange={handleChangeSort}>
+              <select id="sort" onChange={handleChangeSort} className="dark:bg-gray-950">
                 <option hidden>Sort</option>
                 <option value="ticket">Ticket</option>
                 <option value="customer">Customer</option>
@@ -44,7 +44,7 @@ const TicketPage = (): React.JSX.Element => {
                 <option value="date">Date</option>
               </select>
             </div>
-            <p className="text-sm cursor-pointer text-gray-400 hover:text-blue-600 ms-6">
+            <p className="text-sm cursor-pointer text-gray-400 hover:text-blue-600 ms-6 dark:text-orange-600">
               <i className="fa-solid fa-filter me-1"></i> Filter
             </p>
           </div>

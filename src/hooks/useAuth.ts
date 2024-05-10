@@ -19,9 +19,6 @@ export const useLogin = () => {
     });
   };
 
-  console.log(form);
-  
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();

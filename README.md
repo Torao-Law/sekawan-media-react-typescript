@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Nama Proyek
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deskripsi
+Ini adalah proyek React JS yang dikembangkan untuk test-sekawan-media.
 
-Currently, two official plugins are available:
+## Versi React JS
+Versi React JS yang digunakan dalam proyek ini adalah ^18.2.0 dengan vite ^5.2.0.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Versi Node
+Versi Node yang digunakan dalam proyek ini adalah v22.1.0 dengan npm 10.7.0.
 
-## Expanding the ESLint configuration
+## Cara Memulai Proyek
+### Menggunakan npm
+1. Buka terminal.
+2. Arahkan ke direktori proyek Anda.
+3. Jalankan perintah `npm install` untuk menginstal semua dependensi proyek.
+4. Setelah instalasi selesai, jalankan perintah `npm run dev` untuk memulai server pengembangan.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Informasi Login
+Untuk masuk ke aplikasi, gunakan nama pengguna berikut:
+Admin:
+- Nama Pengguna: admin@mail.com
+- Kata Sandi: admin1234
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Guest:
+- Nama Pengguna: tester@mail.com
+- Kata Sandi: tester1234
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Video Demo :
+- Link 1: https://www.loom.com/share/836b558c53aa467eb23240bcd83857bd
+- Link 2: https://www.loom.com/share/0c8b6d3bd9074f5d80dceeb886ba4992

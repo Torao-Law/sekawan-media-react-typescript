@@ -78,32 +78,28 @@ const TableTickets = ({
     };
     
     const handleDropdownClick = (id: number) => (e: React.MouseEvent<HTMLDivElement>) => {
-      e.stopPropagation(); // Menghentikan event propagation agar tidak memicu tampilan modal
+      e.stopPropagation(); 
       toggleDropdown(id);
     };
     
 
   const handleReject = (): void => {
-    // Perform reject action for the ticket with idForDropdown
-    console.log(`Reject ticket with ID: ${idForDropdown}`);
-    setDropdownOpen(false); // Close the dropdown after action
+    setDropdownOpen(false);
   };
 
   const handleAccept = (): void => {
-    // Perform accept action for the ticket with idForDropdown
-    console.log(`Accept ticket with ID: ${idForDropdown}`);
-    setDropdownOpen(false); // Close the dropdown after action
+    setDropdownOpen(false);
   };
 
   return (
     <>
       <table className="w-full">
         <thead>
-          <tr className="grid grid-cols-12 justify-items-start border-b pb-2 px-6">
-            <th className="col-span-5 text-gray-400">Ticket Details</th>
-            <th className="col-span-3 text-gray-400">Customer Name</th>
-            <th className="col-span-2 text-gray-400">Date</th>
-            <th className="col-span-2 text-gray-400">Priority</th>
+          <tr className="grid grid-cols-12 justify-items-start border-b pb-2 px-6 dark:border-b-orange-300">
+            <th className="col-span-5 text-gray-400 dark:text-orange-400">Ticket Details</th>
+            <th className="col-span-3 text-gray-400 dark:text-orange-400">Customer Name</th>
+            <th className="col-span-2 text-gray-400 dark:text-orange-400">Date</th>
+            <th className="col-span-2 text-gray-400 dark:text-orange-400">Priority</th>
           </tr>
         </thead>
 
@@ -112,7 +108,7 @@ const TableTickets = ({
             return (
               <tr
                 key={item.id}
-                className="grid grid-cols-12 h-16 px-6 content-center border-t py-1 cursor-pointer hover:bg-gray-100"
+                className="grid grid-cols-12 h-16 px-6 content-center border-t py-1 cursor-pointer hover:bg-gray-100 dark:hover:bg-orange-100 dark:border-t-orange-300"
                 onClick={() => handleOpen(item.id)}
               >
                 <td className="col-span-5">
@@ -125,10 +121,10 @@ const TableTickets = ({
                       />
                     </div>
                     <div className="ms-4">
-                      <p className="font-bold text-gray-600 text-sm">
+                      <p className="font-bold text-gray-600 text-sm dark:text-orange-600">
                         {item.description}
                       </p>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-gray-400 dark:text-orange-400">
                         "item.ticketDetails.lastUpdate"
                       </p>
                     </div>
@@ -136,17 +132,17 @@ const TableTickets = ({
                 </td>
 
                 <td className="col-span-3">
-                  <p className="font-bold text-gray-600 text-sm">
+                  <p className="font-bold text-gray-600 text-sm dark:text-orange-600">
                     {item.customer.name}
                   </p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-gray-400 dark:text-orange-400">
                     "item.customerLastUpdate"
                   </p>
                 </td>
 
                 <td className="col-span-2">
-                  <p className="font-bold text-gray-600 text-sm">{item.date}</p>
-                  <p className="text-xs text-gray-400">{item.time}</p>
+                  <p className="font-bold text-gray-600 text-sm dark:text-orange-600">{item.date}</p>
+                  <p className="text-xs text-gray-400 dark:text-orange-400">{item.time}</p>
                 </td>
 
                 <td className="col-span-2">
@@ -154,19 +150,19 @@ const TableTickets = ({
                     <LabelPriority name={item.priority} />
                     <div className="relative">
                       <i
-                        className="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-blue-600"
+                        className="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-blue-600 dark:text-orange-600"
                         onClick={(e) => handleDropdownClick(item.id)(e)}
                       ></i>
                       {dropdownOpen && idForDropdown === item.id && (
                         <div className="absolute top-8 right-0 bg-white shadow-md rounded-md p-2">
                           <button
-                            className="block w-full text-left py-1 px-4 hover:bg-gray-100"
+                            className="block w-full text-left py-1 px-4 hover:bg-gray-100 dark:hover:bg-orange-100"
                             onClick={handleReject}
                           >
                             Reject
                           </button>
                           <button
-                            className="block w-full text-left py-1 px-4 hover:bg-gray-100"
+                            className="block w-full text-left py-1 px-4 hover:bg-gray-100 dark:hover:bg-orange-100"
                             onClick={handleAccept}
                           >
                             Accept
@@ -181,11 +177,11 @@ const TableTickets = ({
           })}
 
           <tr className="flex justify-end border-t py-2 px-6">
-            <td className="grid grid-cols-2 justify-items-end gap-10 text-gray-400 content-center">
+            <td className="grid grid-cols-2 justify-items-end gap-10 text-gray-400 content-center dark:text-orange-400">
               <div>
                 <label htmlFor="listOfTickets">Rows per page : </label>
                 <select
-                  className="text-gray-600 font-semibold p-1"
+                  className="text-gray-600 font-semibold p-1 dark:text-orange-600 dark:bg-gray-950"
                   name="listOfTickets"
                   id="listOfTickets"
                   onChange={showItemSet}
@@ -205,7 +201,7 @@ const TableTickets = ({
                 </div>
                 <div className="">
                   <button
-                    className="me-4 hover:text-blue-600"
+                    className="me-4 hover:text-blue-600 dark:hover:text-orange-600"
                     onClick={prevPaginate}
                     disabled={currentPage === 1}
                   >
@@ -213,7 +209,7 @@ const TableTickets = ({
                   </button>
 
                   <button
-                    className="hover:text-blue-600"
+                    className="hover:text-blue-600 dark:hover:text-orange-600"
                     onClick={nextPaginate}
                     disabled={
                       currentPage ===

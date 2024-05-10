@@ -27,7 +27,7 @@ const App = (): React.JSX.Element => {
   React.useEffect(() => {
     if (!isLoading) {
       if (user?.isAuthenticated === false) {
-        navigate("/");
+        navigate("/auth/login");
       }
     }
   }, [isLoading]);
